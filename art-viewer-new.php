@@ -156,7 +156,7 @@ body {
 
 .intro-container .intro-wrapper p {
 
-  margin: .2em auto;
+  margin: .2em 0;
 
   max-width: 750px;
 
@@ -464,7 +464,8 @@ blockquote.animate span:nth-child(3) {
 
 
 
-.intro-text {
+.intro-text,
+.login-modal-wrapper {
   color: #000;
   margin: 0;
   /*visibility: hidden;*/
@@ -480,16 +481,19 @@ blockquote.animate span:nth-child(3) {
   opacity: 0;
 }
 
-.logoout .intro-text {
+.logoout .intro-text,
+.logoout .login-modal-wrapper {
   height: auto;
   max-height: 1000px;
   opacity: 1;
   transition: all .5s ease-in .6s;
+  transition-delay: 1s;
 }
 
 
 @media (min-width: 768px) {
-  .intro-text {
+  .intro-text,
+  .login-modal-wrapper {
     display: block;
     flex: 1 1 50%;
     right: 0;
@@ -499,8 +503,10 @@ blockquote.animate span:nth-child(3) {
     width: 50vw;
     opacity: 0;
   }
-  .logoout .intro-text {
+  .logoout .intro-text,
+  .logoout .login-modal-wrapper {
     height: auto;
+    transition-delay: 0s;
   }
 }
 
@@ -513,7 +519,7 @@ blockquote.animate span:nth-child(3) {
 }
 
 .intro-text small {
-
+  display: inline-block;
   font-size: 70%;
 
   max-width: 600px;	
@@ -559,6 +565,7 @@ blockquote.animate span:nth-child(3) {
   opacity: 1;
 
   transition: opacity .5s ease-in .6s;
+  transition-delay: 0s;
 
 }
 
@@ -709,11 +716,11 @@ blockquote.animate span:nth-child(3) {
 
 			<div class="lang-buttons">
 
-				<a href="#!" class="demo-pill ctrl-btn es-ca">Català</a>
+				<a href="#!" class="ctrl-btn es-ca">Català</a>
 
-				<a href="#!" class="demo-pill ctrl-btn es-es">Castellano</a>
+				<a href="#!" class="ctrl-btn es-es">Castellano</a>
 
-				<a href="#!" class="demo-pill ctrl-btn en-en">English</a>
+				<a href="#!" class="ctrl-btn en-en">English</a>
 
 			</div>
 
@@ -819,11 +826,11 @@ blockquote.animate span:nth-child(3) {
 
 			<div class="lang-buttons">
 
-				<a href="#!" class="demo-pill ctrl-btn es-ca">Català</a>
+				<a href="#!" class="ctrl-btn es-ca">Català</a>
 
-				<a href="#!" class="demo-pill ctrl-btn es-es">Castellano</a>
+				<a href="#!" class="ctrl-btn es-es">Castellano</a>
 
-				<a href="#!" class="demo-pill ctrl-btn en-en">English</a>
+				<a href="#!" class="ctrl-btn en-en">English</a>
 
 			</div>
 
@@ -883,17 +890,17 @@ blockquote.animate span:nth-child(3) {
 
 	<?php } ?>
 
-<?php } else if (date('Y') == "2018") { ?>
+<?php } else if (date('Y') == "2019") { ?>
 
 	<div class="intro-text">
 
 			<div class="lang-buttons">
 
-				<a href="#!" class="demo-pill ctrl-btn es-ca">Català</a>
+				<a href="#!" class="ctrl-btn es-ca">Català</a>
 
-				<a href="#!" class="demo-pill ctrl-btn es-es">Castellano</a>
+				<a href="#!" class="ctrl-btn es-es">Castellano</a>
 
-				<a href="#!" class="demo-pill ctrl-btn en-en">English</a>
+				<a href="#!" class="ctrl-btn en-en">English</a>
 
 			</div>
 
@@ -926,11 +933,11 @@ blockquote.animate span:nth-child(3) {
 
 		<div class="lang-buttons">
 
-			<a href="#!" class="demo-pill ctrl-btn es-ca">Català</a>
+			<a href="#!" class="ctrl-btn es-ca">Català</a>
 
-			<a href="#!" class="demo-pill ctrl-btn es-es">Castellano</a>
+			<a href="#!" class="ctrl-btn es-es">Castellano</a>
 
-			<a href="#!" class="demo-pill ctrl-btn en-en">English</a>
+			<a href="#!" class="ctrl-btn en-en">English</a>
 
 		</div>
 
@@ -938,13 +945,13 @@ blockquote.animate span:nth-child(3) {
 
 
 
-		<p><span class="lang-ca">Vota el millor art de 2017. <br />A partir l'1 de gener de 2019.</span><span class="lang-es">Vota el mejor arte de 2019. <br />A partir del 1 de enero de 2018.</span><span class="lang-en">Vote for the best art of 2017. <br />Start on January 1, 2019.</span></p>
+		<p><span class="lang-ca">Vota el millor art de 2018. <br />A partir l'1 de gener de 2019.</span><span class="lang-es">Vota el mejor arte de 2019. <br />A partir del 1 de enero de 2019.</span><span class="lang-en">Vote for the best art of 2018. <br />Start on January 1, 2019.</span></p>
 
 
 
 		<p><small><span class="lang-ca">Una iniciativa de:</span><span class="lang-es">Una iniciativa de:</span><span class="lang-en">An initiative by:</span> <span><a href="http://www.artssspot.com" target="_blank" class="artssspot">Artssspot.com</a>, <a href="https://www.facebook.com/opening.bcn" target="_blank" class="opening">Opening BCN</a></span></small></p>
 
-		<small><span class="lang-ca">Col·laboren:</span><span class="lang-es">Colaboran:</span><span class="lang-en">Collaborating:</span> <span><a href="http://www.poblenouurbandistrict.com/" target="_blank">Poblenou Urban District</a>, <a href="http://www.younggalleryweekend.com/" target="_blank">Young Gallery Weekend</a>, <a href="http://www.galeriescatalunya.com/" target="_blank">Gremi de Galeries d'Art de Catalunya</a>, <a href="http://www.lhdistrictecultural.cat/" target="_blank">L'Hospitalet Districte Cultural</a>, <a href="http://www.bcnstreetart.xyz/" target="_blank">BCN Street Art</a></span></small></p>
+		<small><small><span class="lang-ca">Col·laboren:</span><span class="lang-es">Colaboran:</span><span class="lang-en">Collaborating:</span> <span><a href="http://www.poblenouurbandistrict.com/" target="_blank">Poblenou Urban District</a>, <a href="http://www.younggalleryweekend.com/" target="_blank">Young Gallery Weekend</a>, <a href="http://www.galeriescatalunya.com/" target="_blank">Gremi de Galeries d'Art de Catalunya</a>, <a href="http://www.lhdistrictecultural.cat/" target="_blank">L'Hospitalet Districte Cultural</a>, <a href="http://www.bcnstreetart.xyz/" target="_blank">BCN Street Art</a></span></small></small></p>
 
 	</div>
 
@@ -996,7 +1003,7 @@ blockquote.animate span:nth-child(3) {
 
   var tt = setTimeout(function(){
     document.getElementById('howToIntro').classList.add('logoout');
-  }, 2000);
+  }, 1500);
 
   document.querySelector('blockquote').classList.toggle('animate');
 

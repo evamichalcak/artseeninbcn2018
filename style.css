@@ -443,12 +443,18 @@ body,
 
 
 .ctrl-btn {
+  background-color: #000;
+  border: solid 1px transparent;
+  border-radius: 15px;
+  color: #fff;
   cursor: pointer;
   margin: .5em .2em;
   text-decoration: none;
   text-shadow: none;
   min-height: 17px;
   transition: all .1s linear;
+  font-size: 14px;
+  padding: 4px 8px 4px;
 }
 
 .ctrl-btn:hover,
@@ -511,7 +517,7 @@ html[lang="es-ES"] .lang-en,
 /* LOGIN */
 
 .login-modal-wrapper {
-  text-shadow: none;
+/*  text-shadow: none;
   margin: 0 auto;
   visibility: hidden;
   position: absolute;
@@ -523,7 +529,7 @@ html[lang="es-ES"] .lang-en,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
   z-index: 0;
 }
 
@@ -533,15 +539,21 @@ html[lang="es-ES"] .lang-en,
 }
 
 .login-modal {
-    background-color: #000;
+    /*background-color: #000;*/
     box-sizing: border-box;
-    box-shadow: 3px 3px 10px rgba(30, 8, 30, .3);
+    /*box-shadow: 3px 3px 10px rgba(30, 8, 30, .3);
     border-radius: 2px;
-    color: #fff;
+    color: #fff;*/
     font-size: 16px;
-    max-width: 400px;
+    margin: 0 auto;
+    max-width: 380px;
     padding: 22px 18px;
     width: 95%;
+}
+
+.login-modal p {
+  font-size: 18px;
+  padding: 0 15px;
 }
 
 .login-modal .demo-pill {
@@ -564,44 +576,85 @@ html[lang="es-ES"] .lang-en,
 
 .register-btn,
 .login-btn {
-    border-radius: .75em .75em 0 0;
-    box-shadow: inset 1px 1px 3px rgba(96, 36, 0, .5);
+    /*border-radius: .75em .75em 0 0;
+    box-shadow: inset 1px 1px 3px rgba(96, 36, 0, .5);*/
+    background-color: #000;
+    color: #fff;
     cursor: pointer;
     display: inline-block;
     padding: 8px 14px 5px;
-    text-shadow: 2px 2px 4px #602400;
+    /*text-shadow: 2px 2px 4px #602400;*/
 }
 .tabbed-login-register,
 .form-active.btn {
-    background-color: #816350;
-    box-shadow: 2px 2px 4px rgba(96, 36, 0, .5);
-    color: #fff;
+   /* box-shadow: 2px 2px 4px rgba(96, 36, 0, .5);
+    color: #fff;*/
     cursor: default;
     text-decoration: none;
     text-shadow: none;
     position: relative;
+    text-align: center;
 }
 .tabbed-login-register {
-    border-radius: .75em;
     padding: 12px 8px 8px ;
+}
+
+.lwa-loading {
+  background-color: #eee;
+}
+
+
+.lwa-status {
+  border: none;
+}
+
+.lwa-status a {
+  color: #000;
 }
 
 .lwa-status-invalid {
     background-color: #FFEBE8;
-    border: none;
     color: #C00;
 }
 
 .login-form input {
-  border-radius: .75em;
-  border: none;
+  background-color: #fff;
+  border: solid 1px #555;
   box-shadow: none;
   box-sizing: border-box;
-  font-family: Roboto, sans-serif;
+  font-family: Montserrat Light, sans-serif;
+  font-size: 14px;
+  font-style: italic;
   margin: 4px auto;
   outline: none;
-  padding: 8px 12px;
-  width: 80%;
+  padding: 6px 10px;
+}
+
+.lwa-submit-button input {
+  background-color: #000;
+  border: solid 1px #000;
+  border-radius: 1.2em;
+  color: #fff;
+  padding: 4px 8px;
+  transition: top .1s linear, mleft .1s linear, box-shadow .1s ease-out;
+}
+
+.lwa-submit-button input:hover,
+.lwa-submit-button input:active {
+  top: -2px;
+  left: -2px;
+  transition: top .2s linear, left .2s linear, box-shadow .2s ease-out;
+  box-shadow: 3px 3px 0px #000;
+  color: #000;
+  background-color: #fff;
+  border: solid 1px #555;
+  position: relative;
+}
+
+.lwa-submit-button input:active {
+  top: -1px;
+  left: -1px;
+  box-shadow: 1px 1px 0px #000;
 }
 
 .form-active:not(.btn) {
@@ -614,8 +667,8 @@ html[lang="es-ES"] .lang-en,
 /* DEMO & MESSAGING */
 
 .demo-pill {
-  background-color: #000;
-      border: solid 1px transparent;
+  background-color: #f30a02;
+  border: solid 1px transparent;
   border-radius: 15px;
   color: #fff;
   display: inline-block;
@@ -789,6 +842,7 @@ html[lang="es-ES"] .lang-en,
   border-bottom: 10px solid transparent; */
   display: inline-block;
   font-size: 10px;
+  font-style: normal;
   height: 0;
   text-shadow: 2px 3px 6px rgba(0, 0, 0, .4);
   transition: text-shadow .2s ease-out;
@@ -1568,6 +1622,7 @@ J-TINDER
   position: relative;
   right: 0;
   top: 40%;
+  text-shadow: -1px -1px 0px #555, -1px 0px 0px #555, 0px 0px 0px #555, 0px -1px 0px #555, 1px 1px 0px #555, 2px 2px 0px #000, 4px 4px 0px #000;
 }
 
 /*#tinderslide .dislike:before {
@@ -1763,12 +1818,13 @@ J-TINDER
 .viewing .more-action {
   cursor: pointer;
   display: inline-block;
+  height: 14px;
   position: relative;
   text-align: center;
   -webkit-backface-visibility: hidden;
-  margin-top: -7px;
   vertical-align: middle;
   padding: 7px 7px 7px 0;
+  width: 3px;
 }
 
 /*.viewing .more-action:before {
@@ -1792,10 +1848,9 @@ J-TINDER
 .viewing .more-action:after {
     content: '+';
     color: #fff;
-    position: relative;
-    position: relative;
-    right: -.2em;
-    top: -.2em;
+    position: absolute;
+    right: -20px;
+    top: 1px;
     display: inline-block;
     font-size: 1.4em;
     font-style: normal;
@@ -1817,22 +1872,19 @@ J-TINDER
     line-height: .9;
 }
 
-.viewing .more-action:hover:after {
+.viewing .more-action:hover:after,
+.viewing .more-action:active:after {
     transition: all .2s ease-in;
-    right: -.15em;
-    top: -.25em;
+    right: -19px;
+    top: -0.5px;
     color: #000;
     background-color: #fff;
     border: solid 1px #666;
     box-shadow: 1.5px 1.5px 0px #000;
 }
 .viewing .more-action:active:after {
-    transition: all .2s ease-in;
-    right: -.175em;
-    top: -.225em;
-    color: #000;
-    background-color: #fff;
-    border: solid 1px #666;
+    right: -19.5px;
+    top: 0;
     box-shadow: 1px 1px 0px #000;
 }
 
@@ -1841,11 +1893,11 @@ J-TINDER
     transition: text-shadow .2s ease-in;
 }*/
 
-@media (min-width: 600px) {
+/*@media (min-width: 600px) {
   .viewing .more-action {
     margin-top: -3px;
   }
-}
+}*/
 
 /*@media (min-width: 1024px) {
   .viewing .more-action {
