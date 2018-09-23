@@ -92,7 +92,7 @@
 
 			</p>
 
-			<p class="logolinks"><a href="https://www.artssspot.com" target="_blank" class="logo-link--l artssspot"><img src="<?php echo get_bloginfo('template_url') ?>/img/logo-artssspot.png" width="100" height="100" alt=""></a><span class="spacer"></span><a href="https://www.facebook.com/opening.bcn" target="_blank" class="logo-link--l opening"><img src="<?php echo get_bloginfo('template_url') ?>/img/logo-opening.png" width="70" height="70" alt=""></a></p>
+			<p class="logolinks"><a href="https://www.artssspot.com" target="_blank" class="logo-link--l artssspot"><img src="<?php echo get_bloginfo('template_url') ?>/img/logo-artssspot.png" width="100" height="100" alt=""></a><span class="spacer"></span><a href="https://www.facebook.com/opening.bcn" target="_blank" class="logo-link--l opening"><img src="<?php echo get_bloginfo('template_url') ?>/img/logo-opening.png" width="80" height="80" alt=""></a></p>
 
 		</div><!-- .info-col -->
 
@@ -110,7 +110,18 @@
 
 			<p class="logolinks">
 
-				<a href="http://www.poblenouurbandistrict.com/" target="_blank" class="pud"><img src="<?php echo get_bloginfo('template_url') ?>/img/pud-logo.png" width="60" height="55" alt="Poblenou Urban District"></a>
+				<a href="http://www.google.com/" target="_blank" class="pud"><img src="<?php echo get_bloginfo('template_url') ?>/img/logo-placeholder.png" width="60" height="55" alt="Poblenou Urban District"></a>
+
+				<span class="spacer"></span>
+
+				<a href="http://www.google.com/" target="_blank" class="pud"><img src="<?php echo get_bloginfo('template_url') ?>/img/logo-placeholder.png" width="60" height="55" alt="Poblenou Urban District"></a>
+
+				<span class="spacer"></span>
+
+				<a href="http://www.google.com/" target="_blank" class="pud"><img src="<?php echo get_bloginfo('template_url') ?>/img/logo-placeholder.png" width="60" height="55" alt="Poblenou Urban District"></a>
+
+
+<!-- 				<a href="http://www.poblenouurbandistrict.com/" target="_blank" class="pud"><img src="<?php echo get_bloginfo('template_url') ?>/img/pud-logo.png" width="60" height="55" alt="Poblenou Urban District"></a>
 
 				<span class="spacer"></span>
 
@@ -126,7 +137,7 @@
 
 				<span class="spacer"></span>
 
-				<a href="http://www.bcnstreetart.xyz/" target="_blank" class="streetart"><img src="<?php echo get_bloginfo('template_url') ?>/img/streetart-logo.png" width="45" height="45" alt="BCN Street Art"></a>
+				<a href="http://www.bcnstreetart.xyz/" target="_blank" class="streetart"><img src="<?php echo get_bloginfo('template_url') ?>/img/streetart-logo.png" width="45" height="45" alt="BCN Street Art"></a> -->
 
 			</p>
 

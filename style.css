@@ -246,6 +246,14 @@ a:active {
   margin: 15px 15px 15px 0;
 }
 
+
+  .site-logo {
+    height: auto;
+    width: 200px;
+    max-width: 45vw;
+    vertical-align: bottom;
+  }
+
 .counter-container,
 .share-container,
 .logo-container {
@@ -306,11 +314,6 @@ a:active {
 
   .site-branding .bottom-bar {
     padding: 5px;
-  }
-
-  .site-logo {
-    max-width: 45vw;
-    vertical-align: bottom;
   }
 
   .counter-container {
@@ -667,13 +670,13 @@ html[lang="es-ES"] .lang-en,
 /* DEMO & MESSAGING */
 
 .demo-pill {
-  background-color: #f30a02;
+  background-color: #ee0000;
   border: solid 1px transparent;
   border-radius: 15px;
   color: #fff;
   display: inline-block;
   font-size: 14px;
-  padding: 4px 8px 4px;
+  padding: 3px 8px 5px;
 }
 
 .viewing .demo-pill,
@@ -690,13 +693,14 @@ html[lang="es-ES"] .lang-en,
 
 .viewing .demo-pill,
 .site-branding .demo-pill {
-  box-shadow: 2px 3px 6px rgba(0, 0, 0, .4);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .4);
+  /*box-shadow: 1px 1px 0px #fff;*/
   transition: padding .2s ease-out, box-shadow .2s ease-out;
 }
 
-.site-branding .demo-pill {
+/*.site-branding .demo-pill {
   box-shadow: 2px 3px 6px rgba(0, 0, 0, .2);
-}
+}*/
 
 .viewing .demo-tour,
 .viewing .messages {
@@ -837,14 +841,16 @@ html[lang="es-ES"] .lang-en,
 .demo-pill.demo--6:before,
 .demo-pill.demo--7:before {
   font-family: "fontello";
-  color: #f30a02;
+  color: #ff0000;
 /*  border-top: 10px solid transparent;
   border-bottom: 10px solid transparent; */
   display: inline-block;
   font-size: 10px;
   font-style: normal;
   height: 0;
-  text-shadow: 2px 3px 6px rgba(0, 0, 0, .4);
+/*  text-shadow: 1px 1px 0 #fff;*/
+  /*text-shadow: -1px 0px 0 #fff, 1px 0px 0 #fff, 0px -1px 0 #fff, 0px 1px 0 #fff, 2px 2px 0 #f30a02;*/
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, .4);
   transition: text-shadow .2s ease-out;
   position: absolute;
   width: 0;
@@ -989,9 +995,24 @@ html[lang="es-ES"] .lang-en,
   white-space: nowrap;
   position: relative;
   left: 50%;
-  margin-right: -15px;
-  transform: translateX(-49%);
-  top: -44px;
+  margin-right: -46px;
+  transform: translateX(-41%);
+  top: -46px;
+}
+.en-en .demo-pill.demo--5, 
+html[lang="en-US"] .demo-pill.demo--5 {
+   transform: translateX(-41.5%);
+}
+
+@media screen and (min-width: 481px) {
+  .demo-pill.demo--5 {
+     margin-right: -44px;
+     transform: translateX(-41.5%);
+  }
+  .en-en .demo-pill.demo--5, 
+  html[lang="en-US"] .demo-pill.demo--5 {
+     transform: translateX(-43%);
+  }
 }
 
 .demo-pill.demo--5:before {
@@ -1032,7 +1053,7 @@ html[lang="es-ES"] .lang-en,
     hideText .3s ease-out 15s forwards;
   white-space: nowrap;
   right: 6px;
-  top: -59px;
+  top: -55px;
 }
 html[lang="ca"] .demo-pill.demo--6,
 .es-ca .demo-pill.demo--6 {
@@ -1066,8 +1087,8 @@ html[lang="en-US"] .demo-pill.demo--6:before,
 
 @media screen and (min-width: 640px) {
   .demo-pill.demo--6 {
-    top: -3px;
-    right: 110px;
+    top: -3.5px;
+    right: 130px;
     animation: 
       openPill .5s ease-in 15s both, 
       closePill .5s ease-out 18s forwards, 
@@ -1079,7 +1100,7 @@ html[lang="en-US"] .demo-pill.demo--6:before,
   .es-ca .demo-pill.demo--6,
   html[lang="en-US"] .demo-pill.demo--6, 
   .en-en .demo-pill.demo--6 {
-    right: 110px;
+    right: 130px;
   }
 
   .demo-pill.demo--6:before {
@@ -1102,6 +1123,17 @@ html[lang="en-US"] .demo-pill.demo--6:before,
   }
 }
 
+@media screen and (min-width: 768px) {
+  .demo-pill.demo--6 {
+    right: 100px !important;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .demo-pill.demo--6 {
+    right: 85px !important;
+  }
+}
 
 .demo-pill.demo--7 {
   animation: 
@@ -1109,13 +1141,23 @@ html[lang="en-US"] .demo-pill.demo--6:before,
     closePill .5s ease-out 18s forwards, 
     showText .3s ease-in 15s forwards, 
     hideText .3s ease-out 18s forwards;
+  left: 15px;
+  top: -48px;
   white-space: nowrap;
-  left: 35px;
-  top: -46px;
+}
+@media screen and (max-width: 400px) {
+  .demo-pill.demo--7 {
+    left: 5px;
+  }
 }
 @media screen and (max-width: 480px) {
   .demo-pill.demo--7 {
-    top: -55px;
+    top: -52px;
+  }
+}
+@media screen and (min-width: 640px) {
+  .demo-pill.demo--7 {
+    top: -52px;
   }
 }
 
@@ -2175,4 +2217,12 @@ UTILS
 		display: none !important;
 	}
 }
+
+@media (max-width: 639px) {
+  .hide-under-m {
+    display: none !important;
+  }
+}
+
+
 

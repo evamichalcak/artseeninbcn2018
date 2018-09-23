@@ -349,9 +349,9 @@
 		demo2 += '<span class="lang-en">More info about the work</span></span>';
 
 		// generate html part 3
-		var demo3 = '<span class="demo--6 demo-pill"><span class="lang-ca">Comparteix el que t\'agrada</span>';
-		demo3 += '<span class="lang-es">Comparte lo que te gusta</span>';
-		demo3 += '<span class="lang-en">Share if you like it</span></span>';
+		var demo3 = '<span class="demo--6 demo-pill"><span class="lang-ca">Comparteix<span class="hide-under-m"> el que t\'agrada</span></span>';
+		demo3 += '<span class="lang-es">Comparte<span class="hide-under-m"> lo que te gusta</span></span>';
+		demo3 += '<span class="lang-en">Share<span class="hide-under-m"> if you like it</span></span></span>';
 
 		// generate html part 4
 		demo4 = '<span class="demo--7 demo-pill"><span class="lang-ca">Info sobre la iniciativa</span>';
