@@ -133,9 +133,10 @@ body {
 	background: #eee url('img/explosion-color.gif') center bottom;
   background-size: cover;
 	color: #000;
-	font-family: 'Montserrat Light', sans-serif;
+	font-family: 'Montserrat', sans-serif;
   font-style: italic;
 	font-size: 16px;
+  font-weight: 300;
 	height: auto;
 	overflow: hidden;
   -webkit-font-smoothing: antialiased;
@@ -550,7 +551,8 @@ html[lang="es-ES"] .lang-en,
     font-size: 16px;
     margin: 0 auto;
     max-width: 380px;
-    padding: 22px 18px;
+    padding: 14px 0;
+    text-align: center;
     width: 95%;
 }
 
@@ -577,17 +579,19 @@ html[lang="es-ES"] .lang-en,
   margin-top: 14px;
 }
 
-.register-btn,
+/*.register-btn,
 .login-btn {
-    /*border-radius: .75em .75em 0 0;
-    box-shadow: inset 1px 1px 3px rgba(96, 36, 0, .5);*/
     background-color: #000;
     color: #fff;
     cursor: pointer;
     display: inline-block;
     padding: 8px 14px 5px;
-    /*text-shadow: 2px 2px 4px #602400;*/
+}*/
+
+.btn.form-active {
+  display: none;
 }
+
 .tabbed-login-register,
 .form-active.btn {
    /* box-shadow: 2px 2px 4px rgba(96, 36, 0, .5);
@@ -598,21 +602,21 @@ html[lang="es-ES"] .lang-en,
     position: relative;
     text-align: center;
 }
-.tabbed-login-register {
-    padding: 12px 8px 8px ;
-}
 
 .lwa-loading {
   background-color: #eee;
 }
 
-
 .lwa-status {
   border: none;
 }
 
-.lwa-status a {
+.login-modal .lwa-links a,
+.login-modal a.btn span {
   color: #000;
+  font-size: 90%;
+  text-decoration: underline;
+  margin-top: 7px;
 }
 
 .lwa-status-invalid {
@@ -620,14 +624,28 @@ html[lang="es-ES"] .lang-en,
     color: #C00;
 }
 
+.lwa-status-invalid a {
+    color: #C00 !important;
+    text-decoration: underline !important;
+}
+.lwa-status-confirm a {
+  color: #000 !important;
+  text-decoration: underline !important;
+}
+
+.lwa-remember strong {
+  font-weight: normal;
+}
+
 .login-form input {
   background-color: #fff;
   border: solid 1px #555;
   box-shadow: none;
   box-sizing: border-box;
-  font-family: Montserrat Light, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-style: italic;
+  font-weight: 300;
   margin: 4px auto;
   outline: none;
   padding: 6px 10px;
@@ -668,6 +686,16 @@ html[lang="es-ES"] .lang-en,
 
 
 /* DEMO & MESSAGING */
+
+.tinder-blocker {
+  cursor: wait;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000000000;
+}
 
 .demo-pill {
   background-color: #ee0000;

@@ -21,11 +21,11 @@
 	var expoContainer = "#art-viewer";
 
 	//constans
-	var maxImages = 10;
+	var maxImages = 100;
 	var winningImages = 25;
 	var maxPreloadImages = 10;
 	var loadFactor = maxImages / maxPreloadImages;
-	// var voteOpen = false;
+	var voteOpen = false;
 	var siteURL = "http://asib.theme/";
 
 	// variables
@@ -60,6 +60,16 @@
 			'es': 'Verás las obras en modo galería.',
 			'en': 'You will see the works in gallery mode.',
 		}],
+		'voteStartedPremsa': [{
+			'ca': 'Estàs en mode vista prèvia.',
+			'es': 'Estás en modo vista previa.',
+			'en': 'You are in preview mode.',
+		},
+		{
+			'ca': 'Continuem on ho has deixat.',
+			'es': 'Continuamos donde lo has dejado.',
+			'en': 'We pick up where you left it.',
+		}],
 	};
 
 
@@ -70,7 +80,7 @@
 	//-----------------------------------------
 
 	function initialize(post_query) {
-
+		console.log('initialize');
 
 		var previous_actions = get_user_viewing_info();
 		var cookie_actions = getCookie('uviews');
@@ -112,7 +122,11 @@
 					maxImages -= previous_actions.length;
 					//console.log('printable_posts: ' + printable_posts);
 					setCookie('uviews', user_viewing_data);
-					showMsg = msgs.voteStarted;
+					if (previewPrensa) {
+						showMsg = msgs.voteStartedPremsa;
+					} else {
+						showMsg = msgs.voteStarted;
+					}
 				}
 				// print jTinder
 				preload_images(post_query);
@@ -212,6 +226,8 @@
 	}
 
 	function slider_setup() {
+
+		console.log('slider setup');
 		// if post in query, show requested post
 		show_start_post();
 		// update image counter
@@ -271,6 +287,8 @@
 
 
 	function preview_only_setup() {
+
+		console.log('preview only setup');
 		//console.log('previewonly_setup');
 		show_start_post();
 		// update image counter
@@ -326,6 +344,8 @@
 	}
 
 	function demoTour(previewTour) {
+
+		console.log('demotour');
 		var demo1 =  '';
 		if (!previewTour) {
 		// generate html part 1
@@ -363,12 +383,18 @@
 		$('.viewing .more-action').append(demo2);
 		$('.share-container').append(demo3);
 		$('.logo-container').append(demo4);
-
+		console.log('previewTour', previewTour);
 		if (!previewTour) {
+			// //block jTinder
+			//$('.tinder-container').append('<div class="tinder-blocker"></div>');
 			// hide demo elements after animation is over ***REFACTO***: needs to also reactivate jTinder functionality (see line 129)
 			var tt = setTimeout(function(){
 				$('.demo-tour, .demo-pill').hide();
 			}, 22000);
+			// //unblock jTinder
+			// var tt2 = setTimeout(function(){
+			// 	$('.tinder-blocker').remove();
+			// }, 12600);
 		} else {
 			$('body').addClass('preview-only');
 			var tt = setTimeout(function(){
@@ -387,6 +413,8 @@
 
 	//get posts ordered by view count from DB and initialize on success ***REFACTOR*** needs to check if voting open and if not, do orderby comments count
 	function get_posts() {
+
+		console.log('get posts');
 		var wpQueryString;
 		if(voteOpen) {	
 			wpQueryString = 'get_posts?orderby=meta_value&meta_key=_viewmecount&order=DESC&count='+maxImages;
@@ -688,7 +716,7 @@
 	}
 
 	function setCookie(cname, cvalue) {
-	    var expires = "expires=Thu, 10 Feb 2018 00:00:01 GMT";
+	    var expires = "expires=Thu, 10 Feb 2019 00:00:01 GMT";
 	    document.cookie = cname + "=" + cvalue + " ;" + expires;
 	}
 
@@ -720,7 +748,7 @@
 			setCookie('uviews', 'done');
 		}
 		// show thanks
-		$(sliderList).html('<li class="info-slide"><div class="saving "><span class="lang-ca">Gràcies per participar!</span><span class="lang-es">¡Gracias por participar!</span><span class="lang-en">Thanks for taking part!</span><link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css"><style type="text/css">#mc_embed_signup{clear:left;}</style><div id="mc_embed_signup"><form action="https://artssspot.us13.list-manage.com/subscribe/post?u=3da54577cc3419c3e5d19a5c1&amp;id=04848fa800" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate><div id="mc_embed_signup_scroll"><label for="mce-EMAIL" style="font-weight: normal; margin-top: 15px;"><span class="lang-ca">Per no perdre`t cap expo del 2018, subscriu-te al nostre newsletter</span><span class="lang-es">Para no perderte ninguna expo del 2018, suscríbete a nuestro newsletter</span><span class="lang-en">In order not to miss any show in 2018, subscribe to our mailing list</span></label><input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email" required><!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--><div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3da54577cc3419c3e5d19a5c1_04848fa800" tabindex="-1" value=""></div><div class="clear"><input type="submit" value="OK" name="subscribe" id="mc-embedded-subscribe" class="button"></div></div></form></div></li>');
+		$(sliderList).html('<li class="info-slide"><div class="saving "><span class="lang-ca">Gràcies per participar!</span><span class="lang-es">¡Gracias por participar!</span><span class="lang-en">Thanks for taking part!</span><link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css"><style type="text/css">#mc_embed_signup{clear:left;}</style><div id="mc_embed_signup"><form action="https://artssspot.us13.list-manage.com/subscribe/post?u=3da54577cc3419c3e5d19a5c1&amp;id=04848fa800" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate><div id="mc_embed_signup_scroll"><label for="mce-EMAIL" style="font-weight: normal; margin-top: 15px;"><span class="lang-ca">Per no perdre`t cap expo del 2019, subscriu-te al nostre newsletter</span><span class="lang-es">Para no perderte ninguna expo del 2019, suscríbete a nuestro newsletter</span><span class="lang-en">In order not to miss any show in 2019, subscribe to our mailing list</span></label><input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email" required><!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--><div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3da54577cc3419c3e5d19a5c1_04848fa800" tabindex="-1" value=""></div><div class="clear"><input type="submit" value="OK" name="subscribe" id="mc-embedded-subscribe" class="button"></div></div></form></div></li>');
 		//$(sliderList).html('<li class="info-slide"><div class="saving"><span class="lang-ca">Gràcies per participar!<br /> <br /> Ara dóna\'ns un cop de mà amb un vot més, perquè puguem repetir la iniciativa l\'any que ve:</span><span class="lang-es">¡Gracias por participar!<br /><br />Ahora échanos una mano con un voto más, para que podamos repetir la iniciativa el año que viene:</span><span class="lang-en">Thanks for taking part!<br /> <br /> Now lend us a hand with one more vote, so that we can repeat the initiative next year:</span><br /><br /><a href="https://www.saxoprint.es/printingreallives/participantes/eva/" target="_blank">https://www.saxoprint.es/printingreallives/participantes/eva/</a></li>');
 		clean_screen();
 		$(hideOnLast).hide();
